@@ -4,7 +4,7 @@ namespace TranslationMemory
 {
     class TranslationFactory
     {
-        public static AbstractTranslation GetTranslation(Language language, string translation, string id, string author)
+        public AbstractTranslation GetTranslation(Language language, string translation, string id, string author)
         {
             if (translation.Length > 0)
             {

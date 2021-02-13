@@ -7,11 +7,14 @@ namespace TranslationMemory
     {
         private UserFactory _userFactory = null;
 
+        private TranslationFactory _translationFactory = null;
+
         // private string _UUID;
 
         public DataTransferObject()
         {
             _userFactory = new UserFactory();
+            _translationFactory = new TranslationFactory();
         }
         public InterfaceUser CreateNewUser(Role role, Gender gender, string username, int password, List<Word> words, List<AbstractTranslation> translations)
         {
@@ -191,7 +194,7 @@ namespace TranslationMemory
         }
         private void SetTranslation(Language language, string translation, string wordUuid, string userUuid)
         {
-            AbstractTranslation t = TranslationFactory.GetTranslation(language, "", wordUuid, userUuid);
+            AbstractTranslation t = _translationFactory.GetTranslation(language, "", wordUuid, userUuid);
             Database.Instance.CreateTranslation(t);
         }
         public void CreateLanguage(string language, string uuid)
@@ -214,7 +217,7 @@ namespace TranslationMemory
             List<AbstractTranslation> transLation = new List<AbstractTranslation>();
             foreach (translation trans in translations)
             {
-                AbstractTranslation translation = TranslationFactory.GetTranslation(new Language(trans.LANGUAGE._name, trans.LANGUAGE.ID), trans.Translation, trans.WORD_ID, trans.AUTHOR);
+                AbstractTranslation translation = _translationFactory.GetTranslation(new Language(trans.LANGUAGE._name, trans.LANGUAGE.ID), trans.Translation, trans.WORD_ID, trans.AUTHOR);
                 transLation.Add(translation);
             }
             return transLation;
@@ -224,7 +227,7 @@ namespace TranslationMemory
             List<AbstractTranslation> transLation = new List<AbstractTranslation>();
             foreach (translation trans in translations)
             {
-                AbstractTranslation translation = TranslationFactory.GetTranslation(new Language(trans.LANGUAGE._name, trans.LANGUAGE.ID), trans.Translation, trans.WORD_ID, trans.AUTHOR);
+                AbstractTranslation translation = _translationFactory.GetTranslation(new Language(trans.LANGUAGE._name, trans.LANGUAGE.ID), trans.Translation, trans.WORD_ID, trans.AUTHOR);
                 transLation.Add(translation);
             }
             return transLation;

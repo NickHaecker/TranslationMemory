@@ -131,16 +131,6 @@ namespace TranslationMemory
             }
             return isanswerinlist;
         }
-        public void WriteTranslationsByWord(List<AbstractTranslation> translations, Word word)
-        {
-            List<string> commands = new List<string>();
-            foreach (AbstractTranslation translation in translations)
-            {
-                string command = translation.LANGUAGE._name + ": " + translation.Translation;
-                commands.Add(command);
-            }
-            WriteStringList(commands, word._word, null);
-        }
         public void WriteAddedWords(List<Word> words)
         {
             List<string> commands = new List<string>();

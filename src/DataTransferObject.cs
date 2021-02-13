@@ -29,21 +29,21 @@ namespace TranslationMemory
         public InterfaceUser LoginUser(string username, int password)
         {
             List<admin> admins = Database.Instance.GetAllAdmins();
-            List<translator> translator = Database.Instance.GetAllTranslator();
+            List<translator> translators = Database.Instance.GetAllTranslator();
             InterfaceUser user = null;
-            foreach (admin a in admins)
+            foreach (admin admin in admins)
             {
-                if (a._userName == username && a._password == password)
+                if (admin._userName == username && admin._password == password)
                 {
-                    user = (Admin)_userFactory.GetUser(a.Role, a.Gender, a._userName, a._password, null, null, a.UUID, null);
+                    user = (Admin)_userFactory.GetUser(admin.Role, admin.Gender, admin._userName, admin._password, null, null, admin.UUID, null);
                     break;
                 }
             }
-            foreach (translator t in translator)
+            foreach (translator translator in translators)
             {
-                if (t._userName == username && t._password == password)
+                if (translator._userName == username && translator._password == password)
                 {
-                    user = (Translator)_userFactory.GetUser(t.Role, t.Gender, t._userName, t._password, GetWords(t.AddedWords), GetTranslations(t._addedTranslations), t.UUID, GetLanguage(t._language));
+                    user = (Translator)_userFactory.GetUser(translator.Role, translator.Gender, translator._userName, translator._password, GetWords(translator.AddedWords), GetTranslations(translator._addedTranslations), translator.UUID, GetLanguage(translator._language));
                     break;
                 }
             }
@@ -64,11 +64,11 @@ namespace TranslationMemory
         }
         public InterfaceUser GetTranslator(string username)
         {
-            foreach (Translator t in GetAllTranslator())
+            foreach (Translator translator in GetAllTranslator())
             {
-                if (t._userName == username)
+                if (translator._userName == username)
                 {
-                    return t;
+                    return translator;
                 }
             }
             return null;
@@ -97,11 +97,11 @@ namespace TranslationMemory
         }
         public Language GetLanguage(string language)
         {
-            foreach (Language l in GetLanguages())
+            foreach (Language lang in GetLanguages())
             {
-                if (language == l._name)
+                if (language == lang._name)
                 {
-                    return l;
+                    return lang;
                 }
             }
             return null;
@@ -175,23 +175,23 @@ namespace TranslationMemory
             Database.Instance.SaveWord(newWord);
             return newWord;
         }
-        public void CreateTranslation(string wordUuid, string userUuid, bool createInitialTranslation, AbstractTranslation abstracttranslation)
+        public void CreateTranslation(string wordUUID, string userUUID, bool createInitialTranslation, AbstractTranslation abstractTranslation)
         {
             if (createInitialTranslation)
             {
                 foreach (Language language in GetLanguages())
                 {
-                    SetTranslation(language, "", wordUuid, userUuid);
+                    SetTranslation(language, "", wordUUID, userUUID);
                 }
             }
             else
             {
-                Database.Instance.CreateTranslation(abstracttranslation);
+                Database.Instance.CreateTranslation(abstractTranslation);
             }
         }
-        private void SetTranslation(Language language, string translation, string wordUuid, string userUuid)
+        private void SetTranslation(Language language, string translation, string wordUUID, string userUUID)
         {
-            AbstractTranslation t = _translationFactory.GetTranslation(language, "", wordUuid, userUuid);
+            AbstractTranslation t = _translationFactory.GetTranslation(language, "", wordUUID, userUUID);
             Database.Instance.CreateTranslation(t);
         }
         public void CreateLanguage(string language, string uuid)
@@ -200,12 +200,12 @@ namespace TranslationMemory
             Database.Instance.AddLanguage(l);
             UpdateTranslationByCreatingNewLanguage(l, uuid);
         }
-        private void UpdateTranslationByCreatingNewLanguage(Language l, string uuid)
+        private void UpdateTranslationByCreatingNewLanguage(Language language, string uuid)
         {
             List<Word> words = GetWords();
-            foreach (Word w in words)
+            foreach (Word word in words)
             {
-                SetTranslation(l, "", w._UUID, uuid);
+                SetTranslation(language, "", word._UUID, uuid);
             }
         }
         public List<AbstractTranslation> GetTranslations()
@@ -243,11 +243,11 @@ namespace TranslationMemory
         }
         public AbstractTranslation FilteredTranslationByWord(Word word, Language language)
         {
-            foreach (AbstractTranslation at in GetTranslationByWord(word))
+            foreach (AbstractTranslation abstractTranslationin in GetTranslationByWord(word))
             {
-                if (at.LANGUAGE._name == language._name)
+                if (abstractTranslationin.LANGUAGE._name == language._name)
                 {
-                    return at;
+                    return abstractTranslationin;
                 }
             }
             return null;

@@ -204,12 +204,12 @@ namespace TranslationMemory
             switch (_registeredUser.Role)
             {
                 case Role.TRANSLATOR:
-                    Translator t = (Translator)_registeredUser;
-                    createdWords = t._addedWords;
+                    Translator translator = (Translator)_registeredUser;
+                    createdWords = translator._addedWords;
                     break;
                 default:
-                    User u = (User)_registeredUser;
-                    createdWords = u._addedWords;
+                    User user = (User)_registeredUser;
+                    createdWords = user._addedWords;
                     break;
             }
             List<string> commands = new List<string>();
@@ -247,10 +247,10 @@ namespace TranslationMemory
             Translator translator = (Translator)_dataTransferObject.GetTranslator(_inputController.GetStringAnswer("Welchem Übersetzer möchten Sie eine Sprache zuweisen ?"));
             if (translator != null)
             {
-                Language gotlanguage = _dataTransferObject.GetLanguage(_inputController.GetStringAnswer("Welche Sprache möchten Sie Ihm zuweisen?"));
-                if (gotlanguage != null)
+                Language language = _dataTransferObject.GetLanguage(_inputController.GetStringAnswer("Welche Sprache möchten Sie Ihm zuweisen?"));
+                if (language != null)
                 {
-                    translator.SetLanguage(gotlanguage);
+                    translator.SetLanguage(language);
                     _dataTransferObject.SaveUser(translator, translator.Role);
                 }
                 else
@@ -265,14 +265,14 @@ namespace TranslationMemory
         }
         private void CreateNewLanguage()
         {
-            string answerlanguage = _inputController.GetStringAnswer("Welche Sprache möchten sie hinzufügen?");
-            if (_dataTransferObject.GetLanguage(answerlanguage) == null)
+            string answer = _inputController.GetStringAnswer("Welche Sprache möchten sie hinzufügen?");
+            if (_dataTransferObject.GetLanguage(answer) == null)
             {
-                _dataTransferObject.CreateLanguage(answerlanguage, _registeredUser.UUID);
+                _dataTransferObject.CreateLanguage(answer, _registeredUser.UUID);
             }
             else
             {
-                _inputController.WriteString("Die Sprache " + answerlanguage + " wurde leider bereits angelegt.");
+                _inputController.WriteString("Die Sprache " + answer + " wurde leider bereits angelegt.");
                 _inputController.WriteErrorMessage();
             }
         }
@@ -320,14 +320,14 @@ namespace TranslationMemory
                     break;
             }
         }
-        private void CreateTranslations(string wordUuid, string userUuid)
+        private void CreateTranslations(string wordUUID, string userUUID)
         {
-            _dataTransferObject.CreateTranslation(wordUuid, userUuid, true, null);
+            _dataTransferObject.CreateTranslation(wordUUID, userUUID, true, null);
         }
         private void ListWords()
         {
-            List<string> uncorrecttranslatetwords = _dataTransferObject.GetUncompleteTranslatetWords();
-            _inputController.WriteStringList(uncorrecttranslatetwords, "Diese Wörter haben keine vollständige Übersetzung\n", null);
+            List<string> uncorrectTranslatetWords = _dataTransferObject.GetUncompleteTranslatetWords();
+            _inputController.WriteStringList(uncorrectTranslatetWords, "Diese Wörter haben keine vollständige Übersetzung\n", null);
         }
         private void ShowMyTranslations()
         {

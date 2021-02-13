@@ -9,8 +9,6 @@ namespace TranslationMemory
 
         private TranslationFactory _translationFactory = null;
 
-        // private string _UUID;
-
         public DataTransferObject()
         {
             _userFactory = new UserFactory();
@@ -28,7 +26,6 @@ namespace TranslationMemory
                     return (User)_userFactory.GetUser(role, gender, username, password, words, translations, GetUUID(), null);
             }
         }
-        // public Create
         public InterfaceUser LoginUser(string username, int password)
         {
             List<admin> admins = Database.Instance.GetAllAdmins();
@@ -305,8 +302,12 @@ namespace TranslationMemory
         }
         private Language GetLanguage(language l)
         {
-            Language language = new Language(l._name, l.ID);
-            return language;
+            if (l != null)
+            {
+                Language language = new Language(l._name, l.ID);
+                return language;
+            }
+            return null;
         }
     }
 }

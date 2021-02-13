@@ -163,26 +163,26 @@ namespace TranslationMemory
         }
         private void SearchWord()
         {
-            string word = _inputController.GetStringAnswer("Nach welchem Wort wollen Sie suchen?");
-            Word WORD = _dataTransferObject.GetWord(word);
+            string answer = _inputController.GetStringAnswer("Nach welchem Wort wollen Sie suchen?");
+            Word WORD = _dataTransferObject.GetWord(answer);
             if (WORD == null)
             {
-                _inputController.WriteString("Tut uns leid, das Wort " + word + " haben wir leider nicht in unserem System gefunden.");
+                _inputController.WriteString("Tut uns leid, das Wort " + answer + " haben wir leider nicht in unserem System gefunden.");
                 string boolanswer = _inputController.GetStringAnswer("Wollen Sie das Wort erstellen? Tippe /ja um das Wort zu ertsellen, oder /nein um den Prozess zu beenden");
                 if (boolanswer == "/ja")
                 {
-                    Word _word = _dataTransferObject.CreateWord(word);
+                    Word word = _dataTransferObject.CreateWord(answer);
                     switch (_registeredUser.Role)
                     {
                         case Role.TRANSLATOR:
                             Translator t = (Translator)_registeredUser;
-                            CreateTranslations(_word._UUID, t.UUID);
-                            t.SaveWord(_word);
+                            CreateTranslations(word._UUID, t.UUID);
+                            t.SaveWord(word);
                             break;
                         default:
                             User u = (User)_registeredUser;
-                            CreateTranslations(_word._UUID, u.UUID);
-                            u.SaveWord(_word);
+                            CreateTranslations(word._UUID, u.UUID);
+                            u.SaveWord(word);
                             break;
                     }
                 }
@@ -223,15 +223,15 @@ namespace TranslationMemory
         }
         private void GetCountOfAllWordsInDatabase()
         {
-            string count = "Zurzeit sind " + _dataTransferObject.GetWordsInDatabaseLength() + " in der Datenbank gespeichert";
+            string countMessage = "Zurzeit sind " + _dataTransferObject.GetWordsInDatabaseLength() + " in der Datenbank gespeichert";
             List<string> percentages = _dataTransferObject.GetPercentageOfCorrectTranslatetWords();
-            _inputController.WriteStringList(percentages, count, null);
+            _inputController.WriteStringList(percentages, countMessage, null);
         }
         private void GiveTranslatorALanguage()
         {
-            List<Translator> translator = _dataTransferObject.GetAllTranslator();
+            List<Translator> translators = _dataTransferObject.GetAllTranslator();
             _inputController.WriteString("Diesen Übersetzter wurde noch keine Sprache zugewiesen: ");
-            foreach (Translator t in translator)
+            foreach (Translator t in translators)
             {
                 if (t._language == null)
                 {
@@ -240,18 +240,18 @@ namespace TranslationMemory
             }
             List<Language> languages = _dataTransferObject.GetLanguages();
             _inputController.WriteString("Diese Sprachen sind im System Hinterlegt: ");
-            foreach (Language l in languages)
+            foreach (Language language in languages)
             {
-                _inputController.WriteString(l._name);
+                _inputController.WriteString(language._name);
             }
-            Translator trans = (Translator)_dataTransferObject.GetTranslator(_inputController.GetStringAnswer("Welchem Übersetzer möchten Sie eine Sprache zuweisen ?"));
-            if (trans != null)
+            Translator translator = (Translator)_dataTransferObject.GetTranslator(_inputController.GetStringAnswer("Welchem Übersetzer möchten Sie eine Sprache zuweisen ?"));
+            if (translator != null)
             {
                 Language gotlanguage = _dataTransferObject.GetLanguage(_inputController.GetStringAnswer("Welche Sprache möchten Sie Ihm zuweisen?"));
                 if (gotlanguage != null)
                 {
-                    trans.SetLanguage(gotlanguage);
-                    _dataTransferObject.SaveUser(trans, trans.Role);
+                    translator.SetLanguage(gotlanguage);
+                    _dataTransferObject.SaveUser(translator, translator.Role);
                 }
                 else
                 {
@@ -279,18 +279,18 @@ namespace TranslationMemory
         private void AddTranslation()
         {
             ListWords();
-            Translator translat = (Translator)_registeredUser;
-            Language language = translat._language;
-            _inputController.WriteString("Ihre Sprache ist " + language._name);
+            Translator translator = (Translator)_registeredUser;
+            Language language = translator._language;
             if (language != null)
             {
-                string w = _inputController.GetStringAnswer("Geben Sie das entsprechende Wort ein: ");
-                AbstractTranslation abstracttranslation = _dataTransferObject.GetWordWithMissingTranslation(w, language);
+                _inputController.WriteString("Ihre Sprache ist " + language._name);
+                string answer = _inputController.GetStringAnswer("Geben Sie das entsprechende Wort ein: ");
+                AbstractTranslation abstracttranslation = _dataTransferObject.GetWordWithMissingTranslation(answer, language);
                 if (abstracttranslation != null)
                 {
                     string translation = _inputController.GetStringAnswer("Geben Sie die Übersetzung ein: ");
-                    abstracttranslation = translat.SetTranslation(abstracttranslation, translation);
-                    _dataTransferObject.SaveUser(translat, translat.Role);
+                    abstracttranslation = translator.SetTranslation(abstracttranslation, translation);
+                    _dataTransferObject.SaveUser(translator, translator.Role);
                     _dataTransferObject.CreateTranslation(null, null, false, abstracttranslation);
                 }
                 else
@@ -331,8 +331,8 @@ namespace TranslationMemory
         }
         private void ShowMyTranslations()
         {
-            Translator tra = (Translator)_registeredUser;
-            int countedtranslations = tra._addedTranslations.Count;
+            Translator translator = (Translator)_registeredUser;
+            int countedtranslations = translator._addedTranslations.Count;
             _inputController.WriteString("Du hast " + countedtranslations + " Übersetzungen angelegt.");
         }
     }

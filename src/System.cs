@@ -205,11 +205,11 @@ namespace TranslationMemory
             {
                 case Role.TRANSLATOR:
                     Translator t = (Translator)_registeredUser;
-                    createdWords = t.GetAddedWords();
+                    createdWords = t._addedWords;
                     break;
                 default:
                     User u = (User)_registeredUser;
-                    createdWords = u.GetAddedWords();
+                    createdWords = u._addedWords;
                     break;
             }
             List<string> commands = new List<string>();

@@ -9,16 +9,11 @@ namespace TranslationMemory
         protected Role _role;
         protected string _UUID;
 
-        protected List<Word> _addedWords;
+        public List<Word> _addedWords { get; protected set; }
         public Gender Gender
         {
             get { return _gender; }
             set { _gender = value; }
-        }
-        public List<Word> AddedWords
-        {
-            get { return _addedWords; }
-            set { _addedWords = value; }
         }
         public Role Role
         {
@@ -44,10 +39,6 @@ namespace TranslationMemory
         public void SaveWord(Word word)
         {
             _addedWords.Add(word);
-        }
-        public List<Word> GetAddedWords()
-        {
-            return _addedWords;
         }
     }
 }

@@ -142,7 +142,7 @@ namespace TranslationMemory
                 _inputController.WriteErrorMessage();
                 MainLifeCycleHandleInput();
             }
-
+            _inputController.StopConsole();
         }
         private void Logout()
         {

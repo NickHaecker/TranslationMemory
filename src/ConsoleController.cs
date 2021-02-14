@@ -131,16 +131,9 @@ namespace TranslationMemory
             }
             return isanswerinlist;
         }
-        public void WriteAddedWords(List<Word> words)
+        public void StopConsole()
         {
-            List<string> commands = new List<string>();
-            foreach (Word word in words)
-            {
-                string command = word._word;
-                commands.Add(command);
-            }
-            string prefix = "Du hast " + commands.Count + " erstellt: ";
-            WriteStringList(commands, prefix, null);
+            string answer = GetStringAnswer("Klicke beliebige Taste um fortzufahren: ");
         }
         public void WriteErrorMessage()
         {

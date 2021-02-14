@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-14T13:08:01.210Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="gqMgBtrPsB5jFlwksnx4" version="14.2.4" type="embed" pages="3">
+<mxfile host="65bd71144e" modified="2021-02-14T13:19:33.789Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="uClbxzYzsPYuVu8fdEZf" version="14.2.4" type="embed" pages="3">
     <diagram id="yCAYo7vn6bNdRHoJTmrq" name="UseCases">
         <mxGraphModel dx="1116" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
             <root>
@@ -130,7 +130,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="a24T7AwCA7poDOv9IXqC" name="Aktivitätsdiagramm">
-        <mxGraphModel dx="432" dy="301" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
+        <mxGraphModel dx="515" dy="359" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
             <root>
                 <mxCell id="0oyUR4dgS2eo9P9nxT2M-0"/>
                 <mxCell id="0oyUR4dgS2eo9P9nxT2M-1" parent="0oyUR4dgS2eo9P9nxT2M-0"/>
@@ -163,7 +163,7 @@
                 <mxCell id="2zgg9KsPM5qScTZG1UVL-3" value="Sende Eingabe" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=0;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;strokeColor=#020405;fillColor=#050505;" vertex="1" parent="0oyUR4dgS2eo9P9nxT2M-1">
                     <mxGeometry x="730" y="420" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="2zgg9KsPM5qScTZG1UVL-6" value="&lt;font color=&quot;#ffffff&quot; style=&quot;background-color: rgb(0 , 0 , 0)&quot;&gt;Data Transfer Object&lt;/font&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;width=95;height=40;strokeWidth=1;strokeColor=#457B9D;fontColor=#1D3557;fillColor=#000000;" vertex="1" parent="0oyUR4dgS2eo9P9nxT2M-1">
+                <mxCell id="2zgg9KsPM5qScTZG1UVL-6" value="&lt;font color=&quot;#ffffff&quot; style=&quot;background-color: rgb(0 , 0 , 0)&quot;&gt;Data Transfer Object&lt;/font&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;width=95;height=40;strokeWidth=1;fontColor=#1D3557;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="0oyUR4dgS2eo9P9nxT2M-1">
                     <mxGeometry x="1065" y="390" width="365" height="370" as="geometry"/>
                 </mxCell>
                 <mxCell id="2zgg9KsPM5qScTZG1UVL-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#080E12;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="0oyUR4dgS2eo9P9nxT2M-1" source="2zgg9KsPM5qScTZG1UVL-8" target="2zgg9KsPM5qScTZG1UVL-33">
@@ -182,10 +182,10 @@
                 <mxCell id="2zgg9KsPM5qScTZG1UVL-11" value="Sendet Antwort" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=0;notch2=20;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;strokeColor=#020405;rotation=-180;fillColor=#000000;" vertex="1" parent="0oyUR4dgS2eo9P9nxT2M-1">
                     <mxGeometry x="1160" y="670" width="160" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="2zgg9KsPM5qScTZG1UVL-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#080E12;exitX=0;exitY=0;exitDx=20;exitDy=20;exitPerimeter=0;" edge="1" parent="0oyUR4dgS2eo9P9nxT2M-1" source="2zgg9KsPM5qScTZG1UVL-13" target="2zgg9KsPM5qScTZG1UVL-15">
+                <mxCell id="2zgg9KsPM5qScTZG1UVL-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#080E12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="0oyUR4dgS2eo9P9nxT2M-1" source="2zgg9KsPM5qScTZG1UVL-13" target="2zgg9KsPM5qScTZG1UVL-15">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="2zgg9KsPM5qScTZG1UVL-13" value="Erhalte Antwort" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=0;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;flipH=0;spacingRight=0;spacingLeft=14;strokeColor=#020405;fillColor=#000000;" vertex="1" parent="0oyUR4dgS2eo9P9nxT2M-1">
+                <mxCell id="2zgg9KsPM5qScTZG1UVL-13" value="Erhalte Antwort" style="html=1;shape=mxgraph.infographic.ribbonSimple;notch1=20;notch2=0;align=center;verticalAlign=middle;fontSize=14;fontStyle=0;flipH=0;spacingRight=0;spacingLeft=14;strokeColor=#020405;fillColor=#000000;rotation=-180;" vertex="1" parent="0oyUR4dgS2eo9P9nxT2M-1">
                     <mxGeometry x="725" y="670" width="170" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="2zgg9KsPM5qScTZG1UVL-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;strokeColor=#080E12;" edge="1" parent="0oyUR4dgS2eo9P9nxT2M-1" source="2zgg9KsPM5qScTZG1UVL-15" target="2zgg9KsPM5qScTZG1UVL-17">

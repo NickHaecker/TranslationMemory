@@ -7,6 +7,6 @@ Um das Programm starten zu können ist es wichtig, dass man das .NET Framework i
 <br>
 Um sicherzugehen, dass das Dotnet Framework installiert ist, sollte man den PC einmal neustarten.
 <br>
-Anschließend muss die VSCode Extension C# installiert werden von ,,ms-dotnettools.csharp""
+Anschließend muss die VSCode Extension ,,C#" installiert werden von ,,ms-dotnettools.csharp""
 <br>
 Ist das Programm heruntergeladen worden, startet man das Programm über den Befehl ,,dotnet run" in der VSCode Konsole.

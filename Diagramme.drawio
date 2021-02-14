@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-14T11:31:22.173Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="L5eR1hwUQv7OHlOiUHkp" version="14.2.4" type="embed" pages="3">
+<mxfile host="65bd71144e" modified="2021-02-14T11:56:23.944Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="GJFCKfHfklTppRxMdC_j" version="14.2.4" type="embed" pages="3">
     <diagram id="yCAYo7vn6bNdRHoJTmrq" name="UseCases">
         <mxGraphModel dx="1116" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
             <root>
@@ -184,7 +184,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="ZH4X70LGSWkA0T2b_pML" name="Klassendiagramm">
-        <mxGraphModel dx="3882" dy="-578" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
+        <mxGraphModel dx="3239" dy="-1026" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
             <root>
                 <mxCell id="p4V5GPbBJRA2JJwbldar-0"/>
                 <mxCell id="p4V5GPbBJRA2JJwbldar-1" parent="p4V5GPbBJRA2JJwbldar-0"/>
@@ -919,12 +919,6 @@
                         <mxPoint x="-39.209999999999994" y="24.160000000000004" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="16h8hhJ4lVnCa_QpzgVR-38" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;strokeColor=#000000;exitX=1.007;exitY=0.208;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.001;entryY=0.316;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="p4V5GPbBJRA2JJwbldar-1" source="aObCFGPZb0oXCqcdD9YA-52" target="aObCFGPZb0oXCqcdD9YA-83">
-                    <mxGeometry width="160" relative="1" as="geometry">
-                        <mxPoint x="-770" y="3270" as="sourcePoint"/>
-                        <mxPoint x="-210" y="3310" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="16h8hhJ4lVnCa_QpzgVR-39" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;strokeColor=#000000;" edge="1" parent="p4V5GPbBJRA2JJwbldar-1" source="aObCFGPZb0oXCqcdD9YA-94">
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="-539.02" y="3158.54" as="sourcePoint"/>
@@ -941,6 +935,17 @@
                     <mxGeometry width="160" relative="1" as="geometry">
                         <mxPoint x="-160" y="2550" as="sourcePoint"/>
                         <mxPoint y="2550" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16h8hhJ4lVnCa_QpzgVR-43" value="" style="endArrow=open;endFill=1;endSize=12;html=1;strokeColor=#000000;entryX=0.004;entryY=0.331;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="p4V5GPbBJRA2JJwbldar-1" source="aObCFGPZb0oXCqcdD9YA-52" target="aObCFGPZb0oXCqcdD9YA-83">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="-460" y="3270" as="sourcePoint"/>
+                        <mxPoint x="-300" y="3270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16h8hhJ4lVnCa_QpzgVR-44" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="16h8hhJ4lVnCa_QpzgVR-43">
+                    <mxGeometry x="0.8405" y="-3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
             </root>

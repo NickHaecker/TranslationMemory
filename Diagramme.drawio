@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-14T14:49:19.795Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="DFLyBYl52CUCROE6DK4i" version="14.2.4" type="embed" pages="3">
+<mxfile host="65bd71144e" modified="2021-02-14T14:50:25.902Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="OBTDP6hR1-IkVogjYWt0" version="14.2.4" type="embed" pages="3">
     <diagram id="yCAYo7vn6bNdRHoJTmrq" name="UseCases">
         <mxGraphModel dx="1116" dy="462" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
             <root>
@@ -267,7 +267,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="ZH4X70LGSWkA0T2b_pML" name="Klassendiagramm">
-        <mxGraphModel dx="2598" dy="-1512" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
+        <mxGraphModel dx="2710" dy="-1451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#F1FAEE" math="0" shadow="0">
             <root>
                 <mxCell id="p4V5GPbBJRA2JJwbldar-0"/>
                 <mxCell id="p4V5GPbBJRA2JJwbldar-1" parent="p4V5GPbBJRA2JJwbldar-0"/>
@@ -997,7 +997,7 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="16h8hhJ4lVnCa_QpzgVR-37" value="0..n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="16h8hhJ4lVnCa_QpzgVR-35" vertex="1" connectable="0">
+                <mxCell id="16h8hhJ4lVnCa_QpzgVR-37" value="1..n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="16h8hhJ4lVnCa_QpzgVR-35" vertex="1" connectable="0">
                     <mxGeometry x="-0.9263" relative="1" as="geometry">
                         <mxPoint x="-39.209999999999994" y="24.160000000000004" as="offset"/>
                     </mxGeometry>
